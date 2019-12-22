@@ -58,42 +58,72 @@ var persona1 = {
     nombre: 'Niel 1',
     apellidos: 'Ugarte 1',
     altura: 1.56,
-    edad: 25
+    edad: 25,
+    cantidadLibros: 30
 }
 var persona2 = {
     nombre: 'Niel 2',
     apellidos: 'Ugarte 2',
     altura: 1.66,
-    edad: 26
+    edad: 26,
+    cantidadLibros: 40
 }
 var persona3 = {
     nombre: 'Niel 3',
     apellidos: 'Ugarte 3',
     altura: 1.76,
-    edad: 27
+    edad: 27,
+    cantidadLibros: 50
 }
 var persona4 = {
     nombre: 'Niel 4',
     apellidos: 'Ugarte 4',
     altura: 1.86,
-    edad: 28
+    edad: 28,
+    cantidadLibros: 60
 }
 var persona5 = {
     nombre: 'Niel 5',
     apellidos: 'Ugarte 5',
     altura: 1.96,
-    edad: 29
+    edad: 29,
+    cantidadLibros: 70
 }
 
 const PERSONA_ALTA = 1.75;
+const PERSONA_BAJA = 1.74;
 var personas = [persona1, persona2, persona3, persona4, persona5];
 
-const esAlta = (persona) => {
-    return persona.altura > PERSONA_ALTA
-}
+// const esAlta = ({altura}) => {
+//     return altura > PERSONA_ALTA
+// };
+// const esBaja = ({altura}) => {
+//     return altura <= PERSONA_BAJA
+// };
 
-var personasAltas = personas.filter(esAlta);
+// var personasAltas = personas.filter(esAlta);
+// var personasBajas = personas.filter(esBaja);
 
-console.log(personasAltas);
+// console.log(personasAltas);
+// console.log(personasBajas);
+
+
+// const pasarAlturaCms = (persona) => {
+//     return {
+//         ...persona,
+//         altura: persona.altura * 100
+//     }
+// }
+
+// var personasCms = personas.map(pasarAlturaCms)  
+// console.log(personasCms);
+
+const reducer = (acum, {cantidadLibros}) => {
+    return acum + cantidadLibros
+};
+
+var totalLibros = personas.reduce(reducer, 0);
+
+console.log(`En total todos tienen ${totalLibros} libros`);
 
 
