@@ -54,45 +54,45 @@
 //         break;
 // }
 
-var persona1 = {
-    nombre: 'Niel 1',
-    apellidos: 'Ugarte 1',
-    altura: 1.56,
-    edad: 25,
-    cantidadLibros: 30
-}
-var persona2 = {
-    nombre: 'Niel 2',
-    apellidos: 'Ugarte 2',
-    altura: 1.66,
-    edad: 26,
-    cantidadLibros: 40
-}
-var persona3 = {
-    nombre: 'Niel 3',
-    apellidos: 'Ugarte 3',
-    altura: 1.76,
-    edad: 27,
-    cantidadLibros: 50
-}
-var persona4 = {
-    nombre: 'Niel 4',
-    apellidos: 'Ugarte 4',
-    altura: 1.86,
-    edad: 28,
-    cantidadLibros: 60
-}
-var persona5 = {
-    nombre: 'Niel 5',
-    apellidos: 'Ugarte 5',
-    altura: 1.96,
-    edad: 29,
-    cantidadLibros: 70
-}
+// var persona1 = {
+//     nombre: 'Niel 1',
+//     apellidos: 'Ugarte 1',
+//     altura: 1.56,
+//     edad: 25,
+//     cantidadLibros: 30
+// }
+// var persona2 = {
+//     nombre: 'Niel 2',
+//     apellidos: 'Ugarte 2',
+//     altura: 1.66,
+//     edad: 26,
+//     cantidadLibros: 40
+// }
+// var persona3 = {
+//     nombre: 'Niel 3',
+//     apellidos: 'Ugarte 3',
+//     altura: 1.76,
+//     edad: 27,
+//     cantidadLibros: 50
+// }
+// var persona4 = {
+//     nombre: 'Niel 4',
+//     apellidos: 'Ugarte 4',
+//     altura: 1.86,
+//     edad: 28,
+//     cantidadLibros: 60
+// }
+// var persona5 = {
+//     nombre: 'Niel 5',
+//     apellidos: 'Ugarte 5',
+//     altura: 1.96,
+//     edad: 29,
+//     cantidadLibros: 70
+// }
 
-const PERSONA_ALTA = 1.75;
-const PERSONA_BAJA = 1.74;
-var personas = [persona1, persona2, persona3, persona4, persona5];
+// const PERSONA_ALTA = 1.75;
+// const PERSONA_BAJA = 1.74;
+// var personas = [persona1, persona2, persona3, persona4, persona5];
 
 // const esAlta = ({altura}) => {
 //     return altura > PERSONA_ALTA
@@ -118,12 +118,44 @@ var personas = [persona1, persona2, persona3, persona4, persona5];
 // var personasCms = personas.map(pasarAlturaCms)  
 // console.log(personasCms);
 
-const reducer = (acum, {cantidadLibros}) => {
-    return acum + cantidadLibros
-};
+// const reducer = (acum, {cantidadLibros}) => {
+//     return acum + cantidadLibros
+// };
 
-var totalLibros = personas.reduce(reducer, 0);
+// var totalLibros = personas.reduce(reducer, 0);
 
-console.log(`En total todos tienen ${totalLibros} libros`);
+// console.log(`En total todos tienen ${totalLibros} libros`);
 
+
+class Persona{
+    constructor(nombre, apellido, altura){
+        this.nombre = nombre
+        this.apellido = apellido
+        this.altura = altura
+    }
+
+    saludar(){
+        console.log(`Hola, me llamo ${this.nombre} ${this.apellio}`);
+        
+    }
+    soyAlto(){
+        return this.altura > 1.7     
+    }
+}
+
+class Dev extends Persona{
+    constructor(nombre, apellido, altura){
+        super(nombre, apellido, altura);
+        
+    }
+
+    saludar(){
+        console.log(`Hola, me llamo ${this.nombre} ${this.apellido} y soy programador(a)`);
+        
+    }
+}
+
+var niel = new Persona('Niel', 'Ugarte', 1.72);
+niel.saludar();
+niel.soyAlto();
 
